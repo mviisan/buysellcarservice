@@ -4,5 +4,5 @@
 
 
 
-![alt text](https://github.com/mviisan/buysellcarservice/blob/main/app_mockup.png?raw=true)
-![alt text](https://github.com/mviisan/buysellcarservice/blob/main/diagram.png?raw=true)
+![alt text](https://github.com/mviisan/buysellcarservice/blob/master/app_mockup.png?raw=true)
+![alt text](https://github.com/mviisan/buysellcarservice/blob/master/diagram.png?raw=true) 
