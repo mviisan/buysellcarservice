@@ -13,7 +13,7 @@
 1. [API Gateway](#api-gateway)
 1. [Lambdas](#lambdas)
 1. [Step Functions](#step-functions)
-1. [SNS/SES](#sns/ses)
+1. [SNS/SES](#sns-ses)
 
 ## Tech Stack
 
@@ -33,11 +33,16 @@
 ![alt text](https://github.com/mviisan/buysellcarservice/blob/master/diagram.png?raw=true) 
 
 ## Frontend App
+Website allows user to buy or sell car.
 
 ## API Gateway
+API Gateway exposes an API endpoint. API Gateway then communicates with main lambda. 
 
 ## Lambdas
+Main lambdas receives information from the API Gateway and first communicates communicates with Lambda inside VPC (which will communicate to RDS instance). Main lambda then calls Step Functions.
 
 ## Step Functions
+Step Functions orchestrate additional lambda (to access SNS) and SES
 
-## SNS/SES
+## SNS SES
+SNS and SES send emails and sms
