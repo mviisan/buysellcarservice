@@ -1,5 +1,5 @@
 // AWS API Gateway endpoint
-var API_ENDPOINT = 'https://pqg0t3hlk0.execute-api.us-east-1.amazonaws.com/prod/petcuddleotron';
+var API_ENDPOINT = 'https://pqg0t3hlk0.execute-api.us-east-1.amazonaws.com/prod/buysellcarservice';
 
 var errorDiv = document.getElementById('error-message')
 var successDiv = document.getElementById('success-message')
