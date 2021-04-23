@@ -2,7 +2,7 @@
 
 import boto3, json, os, decimal
 
-SM_ARN = 'arn:aws:states:us-east-1:542671725628:stateMachine:PetCuddleOTron'
+SM_ARN = 'arn:aws:states:us-east-1:542671725628:stateMachine:BuySellCarService'
 
 sm = boto3.client('stepfunctions')
 

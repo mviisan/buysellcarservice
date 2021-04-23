@@ -44,5 +44,7 @@ Main lambda receives information from the API Gateway and first communicates wit
 ## Step Functions
 Step Functions orchestrate additional lambda (to access SNS) and SES
 
+![alt text](https://github.com/mviisan/buysellcarservice/blob/master/state_machine.png?raw=true) 
+
 ## SNS SES
 SNS and SES send emails and sms
