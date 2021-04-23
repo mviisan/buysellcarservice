@@ -3,10 +3,10 @@ import logging
 #import rds_config
 import pymysql
 #rds settings
-rds_host  = "mysqlforlambdatest.crbuc3acewvo.us-east-1.rds.amazonaws.com"
-name = ""
-password = ""
-db_name = "ExampleDB"
+rds_host  = rds_config.instance_endpoint
+name = rds_config.db_username
+password = rds_config.db_password
+db_name = rds_config.db_name
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

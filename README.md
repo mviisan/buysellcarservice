@@ -18,6 +18,7 @@
 ## Tech Stack
 
 1. HTML/CSS/Javascript
+1. Python
 1. AWS API Gateway
 1. AWS Lambda
 1. AWS RDS MySQL
