@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Car buy/sell service">
+    <title>Buy/sell car service</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- JS Stuff -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Custom styles -->
+    <link href="main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-signin">
+        <div id='error-message'></div>
+        <div id='success-message'></div>
+       <!-- <label for="waitSeconds" class="sr-only"></label>	-->
+	
+    <p><b>* This app allows you to buy or sell a car. <br>* If you choose to buy, the app will search the database for cars matching your criteria and send you an email and sms with the amount of cars it found.
+     <br>* If you choose to sell, it will add an entry to the database with the details of your car. </b></p>
+     <hr>
+     <p><b>I want to: </b></p>
+		<input type="radio" id="buy" name="buysell" value="buy" > <label for="buy">Buy</label><br>
+		<input type="radio" id="sell" name="buysell" value="sell"> <label for="sell">Sell</label><br>
+    <hr>
+    <p><b>Price:</b></p>
+		<input type="radio" id="price1" name="price" value="0-5000"> <label for="price1">£0 - £5000</label><br>
+		<input type="radio" id="price2" name="price" value="5000-10000"> <label for="price2">£5000 - £10000</label><br>  
+		<input type="radio" id="price3" name="price" value="10000-10000"> <label for="price3">£10000 - £100000</label><br>
+    <hr>
+    <p><b>Car manufacture:</b></p>
+		<input type="radio" id="car1" name="car" value="audi"> <label for="car1">Audi</label><br>
+		<input type="radio" id="car2" name="car" value="mercedes"> <label for="car2">Mercedes</label><br>  
+		<input type="radio" id="car3" name="car" value="tesla"> <label for="car3">Tesla</label><br>
+		<input type="radio" id="car4" name="car" value="toyota"> <label for="car4">Toyota</label><br>
+	<hr>
+        <p><b>Announcement</b></p>
+        <input type="text" id="message" class="form-control" placeholder="Enter your buy/sell announcement here">
+        <hr>
+        <p><b>Email address and phone number</b></p>
+        <label for="email" class="sr-only">email</label>
+        <input type="email" id="email" class="form-control" placeholder="example@mail.com">
+        <label for="phone" class="sr-only">phone</label>
+        <input type="text" id="phone" class="form-control" placeholder="+12345678910">
+        
+      </br>
+      <button id="submitButton" class="btn btn-md btn-dark btn-block" type="submit">SUBMIT</button>
+        <div id='results-message'></div>
+      </form>
+    </div> <!-- /container -->
+    <script src="service.js"></script>
+  </body>
+</html>
