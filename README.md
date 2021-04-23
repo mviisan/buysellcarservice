@@ -39,7 +39,7 @@ Website allows user to buy or sell car.
 API Gateway exposes an API endpoint. API Gateway then communicates with main lambda. 
 
 ## Lambdas
-Main lambdas receives information from the API Gateway and first communicates communicates with Lambda inside VPC (which will communicate to RDS instance). Main lambda then calls Step Functions.
+Main lambda receives information from the API Gateway and first communicates with lambda inside VPC (which will communicate with the RDS instance). Main lambda then calls Step Functions.
 
 ## Step Functions
 Step Functions orchestrate additional lambda (to access SNS) and SES
