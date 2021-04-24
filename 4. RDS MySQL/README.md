@@ -6,7 +6,6 @@ aws rds create-db-instance --db-name ExampleDB --engine MySQL \
 --master-username username --master-user-password password
 
 
-RDS and VPC lambda need to be in the same VPC to communicate
-RDS MySQL instance's security group needs to permit inbound traffic on port 3306:
+RDS and VPC lambda need to be in the same VPC to communicate. RDS MySQL instance's security group needs to permit inbound traffic on port 3306:
 
 ![alt text](https://github.com/mviisan/buysellcarservice/blob/master/4.%20RDS%20MySQL/rds_SG.png?raw=true)
