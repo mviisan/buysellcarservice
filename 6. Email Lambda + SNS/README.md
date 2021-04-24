@@ -1,0 +1,1 @@
+Register sending and receiving email addresses in SES: https://console.aws.amazon.com/ses/home?region=us-east-1#verified-senders-email:

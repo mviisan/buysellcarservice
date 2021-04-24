@@ -1,0 +1,95 @@
+{
+    "StartAt": "Notification",
+    "States": {
+      "Notification": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Variable": "$.notification",
+            "StringEquals": "both",
+            "Next": "EmailandSMS"
+          },
+          {
+            "Variable": "$.notification",
+            "StringEquals": "email",
+            "Next": "Email"
+          },
+          {
+            "Variable": "$.notification",
+            "StringEquals": "sms",
+            "Next": "SMS"
+          }
+        ],
+        "Default": "None"
+      },
+      "EmailandSMS": {
+        "Type": "Parallel",
+        "Branches": [
+          {
+            "StartAt": "BothEmail",
+            "States": {
+              "BothEmail": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": {
+                  "FunctionName": "arn:aws:lambda:us-east-1:xxxyyy",
+                  "Payload": {
+                    "Input.$": "$"
+                  }
+                },
+                "End": true
+              }
+            }
+          },
+          {
+            "StartAt": "BothSMS",
+            "States": {
+              "BothSMS": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::sns:publish",
+                "Parameters": {
+                  "Message": {
+                    "Input.$": "$.message"
+                  },
+                  "PhoneNumber.$": "$.phone"
+                },
+                "End": true
+              }
+            }
+          }
+        ],
+        "Next": "NotificationSent"
+      },
+      "Email": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-east-1xxxyyy",
+          "Payload": {
+            "Input.$": "$"
+          }
+        },
+        "Next": "NotificationSent"
+      },
+      "SMS": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "Message": {
+            "Input.$": "$.message"
+          },
+          "PhoneNumber.$": "$.phone"
+        },
+        "Next": "NotificationSent"
+      },
+      "None": {
+        "Type": "Fail",
+        "Error": "DefaultStateError",
+        "Cause": "No email or phone number."
+      },
+      "NotificationSent": {
+        "Type": "Pass",
+        "End": true
+      }
+    }
+  }
