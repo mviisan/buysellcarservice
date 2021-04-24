@@ -1,0 +1,1 @@
+Step functions send either sms or email or both, depending on what comes from the front end page.
